@@ -1,0 +1,57 @@
+# Ballooon Studio — Sveltia CMS configuration
+# Docs: https://sveltiacms.app/en/ (Decap-compatible config format)
+# Sign-in: open /admin on the live site and sign in with GitHub.
+# Sveltia supports GitHub sign-in with a fine-grained personal access token (PAT),
+# so no OAuth App is required. See README.md "How Karida edits the site".
+
+backend:
+  name: github
+  repo: karidazhang-beep/ballooonvan-website
+  branch: main
+
+# Where uploaded photos live in the repo, and how the site serves them.
+media_folder: assets/gallery
+public_folder: /assets/gallery
+
+# Keep the admin UI in English.
+locale: en
+
+singletons:
+  - name: settings
+    label: Site Settings
+    file: content/settings.json
+    fields:
+      - { name: brand, label: Brand name, widget: string }
+      - { name: artistName, label: Artist name, widget: string }
+      - { name: phone, label: Phone, widget: string }
+      - { name: phoneNote, label: Phone note (e.g. Text preferred), widget: string }
+      - { name: email, label: Email, widget: string }
+      - { name: instagram, label: Instagram handle (no @), widget: string }
+      - { name: wechat, label: WeChat ID, widget: string }
+      - { name: hourlyRate, label: Hourly rate (CAD), widget: number, value_type: int, min: 0 }
+      - { name: decorationPricing, label: Party decoration pricing text, widget: string }
+      - { name: serviceArea, label: Service area line, widget: string }
+      - { name: serviceAreaNote, label: Service area note, widget: string }
+      - { name: travelFeeNote, label: Travel fee note, widget: string }
+
+collections:
+  - name: gallery
+    label: Photo Gallery
+    files:
+      - name: gallery
+        label: Gallery photos
+        file: content/gallery.json
+        fields:
+          - name: photos
+            label: Photos
+            widget: list
+            summary: "{{fields.caption}}"
+            fields:
+              - { name: image, label: Photo, widget: image }
+              - { name: caption, label: Caption, widget: string, required: false }
+              - name: category
+                label: Category
+                widget: select
+                options:
+                  - { label: Face Painting, value: facepaint }
+                  - { label: Balloon Twisting, value: balloon }

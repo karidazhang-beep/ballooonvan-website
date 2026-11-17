@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ballooon Studio — Face Painting & Balloon Twisting | Vancouver & Beyond</title>
+<meta name="description" content="Ballooon Studio by Karida Zhang: face painting and balloon twisting for birthdays and parties in Metro Vancouver and beyond. $120/hr. Book both together! Text 778-881-4661.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='26' rx='24' ry='22' fill='%23FFC53D'/%3E%3Cpath d='M28 47 L36 47 L32 54 Z' fill='%23F0A92E'/%3E%3Ccircle cx='24' cy='23' r='3' fill='%233A2E2A'/%3E%3Ccircle cx='40' cy='23' r='3' fill='%233A2E2A'/%3E%3Cpath d='M24 30 Q32 37 40 30' stroke='%233A2E2A' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --cream:#FFFBEF; --card:#FFFDF6; --ink:#3A2E2A; --ink-soft:#6B5D58;
+  --red:#E23B3B; --green:#2FA37C; --yellow:#FFC53D; --pink:#FF8FAB; --blue:#4EA8DE;
+  --shadow:0 6px 24px rgba(58,46,42,.10); --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Quicksand",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
+h1,h2,h3,.brand{font-family:"Baloo 2","Quicksand",system-ui,sans-serif;line-height:1.15}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:50;background:rgba(255,251,239,.92);backdrop-filter:blur(6px);border-bottom:2px solid #F5E9C8}
+.nav{display:flex;align-items:center;gap:14px;padding:10px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:22px}
+.logo svg{width:44px;height:44px;flex:none}
+.logo small{display:block;font-family:"Quicksand",sans-serif;font-size:12px;font-weight:600;color:var(--ink-soft);letter-spacing:.04em}
+.nav-links{margin-left:auto;display:flex;gap:18px;font-weight:600}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--red)}
+.btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 22px;border:0;cursor:pointer;font-size:16px;transition:transform .12s ease, box-shadow .12s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 6px 16px rgba(226,59,59,.35)}
+.btn-green{background:var(--green);color:#fff;box-shadow:0 6px 16px rgba(47,163,124,.35)}
+.btn-outline{background:#fff;border:2px solid var(--ink);color:var(--ink)}
+.hero{padding:44px 0 10px;text-align:center;position:relative;overflow:hidden}
+.hero-balloons{display:flex;justify-content:center;gap:6px;margin-bottom:6px}
+.hero-balloons svg{width:74px;height:74px}
+.float{animation:floaty 3.2s ease-in-out infinite}
+.float.d2{animation-delay:.6s}.float.d3{animation-delay:1.2s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero h1{font-size:clamp(34px,6vw,56px);margin:8px 0 10px}
+.hero h1 .w1{color:var(--red)}.hero h1 .w2{color:var(--green)}.hero h1 .w3{color:#E9A820}
+.hero p.lead{font-size:clamp(17px,2.6vw,21px);color:var(--ink-soft);max-width:640px;margin:0 auto 18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 20px}
+.chip{background:#fff;border:2px solid #F0DFB2;border-radius:999px;padding:7px 14px;font-weight:600;font-size:14px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.combo-banner{margin:28px auto 0;max-width:760px;background:linear-gradient(90deg,#FFE9A8,#FFD3DC,#CDEBDD);border-radius:var(--radius);padding:16px 22px;font-weight:700;font-size:17px;box-shadow:var(--shadow)}
+.combo-banner span{display:block;font-weight:600;font-size:14px;color:var(--ink-soft)}
+section{padding:44px 0 8px}
+section h2{font-size:clamp(26px,4vw,34px);margin:0 0 6px;text-align:center}
+section .sub{text-align:center;color:var(--ink-soft);margin:0 0 24px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:210px;object-fit:cover}
+.card-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-body h3{margin:0;font-size:22px}
+.card-body h3 small{color:var(--ink-soft);font-size:14px;font-weight:600}
+.card-body p{margin:0;color:var(--ink-soft);flex:1}
+.price{font-family:"Baloo 2",sans-serif;font-size:24px;font-weight:800}
+.price small{font-size:14px;font-family:"Quicksand",sans-serif;font-weight:600;color:var(--ink-soft)}
+.tag{display:inline-block;align-self:flex-start;background:#FFF3C4;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700}
+.filters{display:flex;gap:10px;justify-content:center;margin-bottom:18px;flex-wrap:wrap}
+.filter-btn{border:2px solid var(--ink);background:#fff;border-radius:999px;padding:8px 18px;font-weight:700;cursor:pointer;font-family:inherit;font-size:15px}
+.filter-btn.active{background:var(--ink);color:#fff}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery figure{margin:0;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.gallery img{width:100%;height:240px;object-fit:cover}
+.gallery figcaption{padding:10px 14px;font-size:14px;font-weight:600;color:var(--ink-soft)}
+.pricing-box{max-width:760px;margin:0 auto;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 28px}
+.pricing-box table{width:100%;border-collapse:collapse}
+.pricing-box td{padding:12px 4px;border-bottom:2px dashed #F0DFB2;font-size:17px}
+.pricing-box td:last-child{text-align:right;font-weight:800;white-space:nowrap}
+.pricing-box tr:last-child td{border-bottom:0}
+.note{font-size:14px;color:var(--ink-soft)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step}
+.step{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;text-align:center}
+.step .num{width:46px;height:46px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:"Baloo 2",sans-serif;font-size:22px;font-weight:800;color:#fff;background:var(--yellow);margin-bottom:10px}
+.step:nth-child(2) .num{background:var(--green)}.step:nth-child(3) .num{background:var(--red)}
+.step h3{margin:0 0 6px}.step p{margin:0;color:var(--ink-soft)}
+form.booking{max-width:680px;margin:0 auto;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 28px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:700;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:12px 14px;border:2px solid #EADFC0;border-radius:14px;font:inherit;font-size:16px;background:#fff}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid #FFE08A;border-color:var(--yellow)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.checks{display:flex;flex-wrap:wrap;gap:10px}
+.checks label{display:flex;align-items:center;gap:8px;background:#fff;border:2px solid #EADFC0;border-radius:999px;padding:10px 16px;font-weight:600;cursor:pointer;margin:0}
+.checks input{width:18px;height:18px;accent-color:var(--red)}
+.estimate{background:#FFF3C4;border-radius:14px;padding:14px 18px;font-weight:700;font-size:17px;margin:4px 0 16px}
+.estimate small{display:block;font-weight:600;color:var(--ink-soft);font-size:13px}
+.form-msg{display:none;border-radius:14px;padding:12px 16px;font-weight:600;margin-bottom:14px}
+.form-msg.error{display:block;background:#FDE2E2;color:#8B1E1E}
+.form-msg.ok{display:block;background:#DDF2E6;color:#1E6B47}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:760px;margin:0 auto}
+.contact-item{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:18px 20px}
+.contact-item b{display:block;font-size:14px;color:var(--ink-soft);letter-spacing:.05em;text-transform:uppercase}
+.contact-item a{font-weight:700;font-size:19px;text-decoration:none}
+.contact-item a:hover{text-decoration:underline}
+.contact-item span{font-size:14px;color:var(--ink-soft);display:block}
+footer{margin-top:48px;padding:26px 0 90px;text-align:center;color:var(--ink-soft);font-size:14px}
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,251,239,.96);border-top:2px solid #F0DFB2}
+.sticky-bar a{flex:1;text-align:center}
+@media (max-width:760px){
+  .services,.steps{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .gallery img{height:180px}
+  .nav-links{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .sticky-bar{display:flex}
+  footer{padding-bottom:110px}
+}
+@media (max-width:420px){.gallery{grid-template-columns:1fr}.gallery img{height:230px}}
+</style>
+<script type="application/ld+json" id="schema-json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ballooon Studio","description":"Face painting, balloon twisting and party decoration for birthdays and parties in Metro Vancouver and beyond.","telephone":"+1-778-881-4661","email":"ballooonvan@yahoo.com","url":"https://ballooonvan.com","priceRange":"$120/hr","founder":{"@type":"Person","name":"Karida Zhang"},"areaServed":"Metro Vancouver and beyond","sameAs":["https://www.instagram.com/ballooonvan"]}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Ballooon Studio home">
+      <svg viewBox="0 0 120 64" aria-hidden="true"><g><ellipse cx="28" cy="24" rx="22" ry="20" fill="#E23B3B"/><path d="M24 43 L32 43 L28 50 Z" fill="#C22F2F"/><circle cx="21" cy="21" r="2.6" fill="#3A2E2A"/><circle cx="35" cy="21" r="2.6" fill="#3A2E2A"/><path d="M21 27 Q28 33 35 27" stroke="#3A2E2A" stroke-width="2.6" fill="none" stroke-linecap="round"/><ellipse cx="17" cy="26" rx="3.4" ry="2.4" fill="#FF9FAF" opacity=".8"/><ellipse cx="39" cy="26" rx="3.4" ry="2.4" fill="#FF9FAF" opacity=".8"/></g><g><ellipse cx="62" cy="24" rx="22" ry="20" fill="#2FA37C"/><path d="M58 43 L66 43 L62 50 Z" fill="#248763"/><circle cx="55" cy="21" r="2.6" fill="#3A2E2A"/><circle cx="69" cy="21" r="2.6" fill="#3A2E2A"/><path d="M55 27 Q62 33 69 27" stroke="#3A2E2A" stroke-width="2.6" fill="none" stroke-linecap="round"/><ellipse cx="51" cy="26" rx="3.4" ry="2.4" fill="#FF9FAF" opacity=".8"/><ellipse cx="73" cy="26" rx="3.4" ry="2.4" fill="#FF9FAF" opacity=".8"/></g><g><ellipse cx="96" cy="24" rx="22" ry="20" fill="#FFC53D"/><path d="M92 43 L100 43 L96 50 Z" fill="#E9A820"/><circle cx="89" cy="21" r="2.6" fill="#3A2E2A"/><circle cx="103" cy="21" r="2.6" fill="#3A2E2A"/><path d="M89 27 Q96 33 103 27" stroke="#3A2E2A" stroke-width="2.6" fill="none" stroke-linecap="round"/><ellipse cx="85" cy="26" rx="3.4" ry="2.4" fill="#FF9FAF" opacity=".8"/><ellipse cx="107" cy="26" rx="3.4" ry="2.4" fill="#FF9FAF" opacity=".8"/></g></svg>
+      <span>Ballooon Studio<small>FACE PAINTING &nbsp;•&nbsp; BALLOONS &nbsp;•&nbsp; PARTIES</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#pricing">Pricing</a><a href="#book">Book now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <div class="hero-balloons" aria-hidden="true">
+      <svg class="float" viewBox="0 0 64 64"><ellipse cx="32" cy="26" rx="24" ry="22" fill="#E23B3B"/><path d="M28 47 L36 47 L32 54 Z" fill="#C22F2F"/><circle cx="24" cy="23" r="3" fill="#3A2E2A"/><circle cx="40" cy="23" r="3" fill="#3A2E2A"/><path d="M24 30 Q32 37 40 30" stroke="#3A2E2A" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="19" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/><ellipse cx="45" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/></svg>
+      <svg class="float d2" viewBox="0 0 64 64"><ellipse cx="32" cy="26" rx="24" ry="22" fill="#FFC53D"/><path d="M28 47 L36 47 L32 54 Z" fill="#E9A820"/><circle cx="24" cy="23" r="3" fill="#3A2E2A"/><circle cx="40" cy="23" r="3" fill="#3A2E2A"/><path d="M24 30 Q32 37 40 30" stroke="#3A2E2A" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="19" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/><ellipse cx="45" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/></svg>
+      <svg class="float d3" viewBox="0 0 64 64"><ellipse cx="32" cy="26" rx="24" ry="22" fill="#2FA37C"/><path d="M28 47 L36 47 L32 54 Z" fill="#248763"/><circle cx="24" cy="23" r="3" fill="#3A2E2A"/><circle cx="40" cy="23" r="3" fill="#3A2E2A"/><path d="M24 30 Q32 37 40 30" stroke="#3A2E2A" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="19" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/><ellipse cx="45" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/></svg>
+    </div>
+    <h1><span class="w1">Face Painting</span> &amp; <span class="w2">Balloon Twisting</span><br><span class="w3">for unforgettable parties</span></h1>
+    <p class="lead">Hi, I&rsquo;m Karida! I bring the colour to birthdays, festivals and family events — beautiful face paint, fun balloon animals, and party decoration.</p>
+    <div class="chips">
+      <span class="chip" data-setting="serviceArea">Metro Vancouver &amp; beyond</span>
+      <span class="chip">Birthdays &bull; Festivals &bull; Schools &bull; Corporate family events</span>
+      <span class="chip">English / 中文</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-red" href="#book">Book now 🎈</a>
+      <a class="btn btn-outline" href="sms:+17788814661" data-phone-sms>Text us: 778-881-4661</a>
+    </div>
+    <div class="combo-banner">🎨 + 🎈 Face painting &amp; balloon twisting can be booked together for the same party!
+      <span>One artist, double the fun — pick both services in the booking form below.</span>
+    </div>
+  </section>
+
+  <section id="services" class="wrap">
+    <h2>Services 服务</h2>
+    <p class="sub">Each service shines on its own — and they work wonderfully together.</p>
+    <div class="services">
+      <article class="card">
+        <img src="/assets/gallery/arm-flower.jpg" alt="Floral arm painting with glitter" loading="lazy">
+        <div class="card-body">
+          <h3>Face Painting <small>面部彩绘</small></h3>
+          <p>Butterflies, superheroes, princesses, animals and glitter accents — gentle, skin-safe paints, designs for every age.</p>
+          <span class="tag">Most loved by birthday kids</span>
+          <div class="price" data-rate>$120 <small>/ hour</small></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="/assets/gallery/balloon-flower.jpg" alt="Balloon flower with a name on it" loading="lazy">
+        <div class="card-body">
+          <h3>Balloon Twisting <small>扭气球</small></h3>
+          <p>Balloon animals, flowers, swords, crowns and custom sculptures — twisted live, right in front of delighted kids.</p>
+          <span class="tag">Great for line-ups &amp; walkabouts</span>
+          <div class="price" data-rate>$120 <small>/ hour</small></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="/assets/gallery/party-table.jpg" alt="Party table with balloons ready" loading="lazy">
+        <div class="card-body">
+          <h3>Party Decoration <small>派对布置</small></h3>
+          <p>Balloon garlands, backdrops and themed set-ups that turn a room into a party. Tell us your theme and we&rsquo;ll quote it.</p>
+          <span class="tag">Custom themes welcome</span>
+          <div class="price">Custom quote</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="gallery" class="wrap">
+    <h2>Gallery 作品</h2>
+    <p class="sub">Real work from real parties. (Children&rsquo;s faces are never shown here.)</p>
+    <div class="filters" role="group" aria-label="Filter gallery">
+      <button class="filter-btn active" data-filter="all" type="button">All</button>
+      <button class="filter-btn" data-filter="facepaint" type="button">Face Painting</button>
+      <button class="filter-btn" data-filter="balloon" type="button">Balloon Twisting</button>
+    </div>
+    <div class="gallery" id="gallery-grid"></div>
+  </section>
+
+  <section id="pricing" class="wrap">
+    <h2>Pricing 价格</h2>
+    <p class="sub">Simple, honest pricing. Final quote confirmed when we reply.</p>
+    <div class="pricing-box">
+      <table>
+        <tr><td>Face Painting 面部彩绘</td><td data-rate>$120 / hour</td></tr>
+        <tr><td>Balloon Twisting 扭气球</td><td data-rate>$120 / hour</td></tr>
+        <tr><td>Face Painting + Balloon Twisting together</td><td>Book both together!</td></tr>
+        <tr><td>Party Decoration 派对布置</td><td>Custom quote</td></tr>
+        <tr><td>Travel fee <span class="note">(by distance)</span></td><td>Confirmed before booking</td></tr>
+      </table>
+      <p class="note" style="margin:14px 0 0">Serving <span data-setting="serviceArea">Metro Vancouver &amp; beyond</span> — other places welcome too, travel fee depends on distance. Have a big event or a tight budget? Message us and we&rsquo;ll work something out.</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>How booking works</h2>
+    <p class="sub">Three easy steps to a colourful party.</p>
+    <div class="steps">
+      <div class="step"><span class="num">1</span><h3>Send a request</h3><p>Fill in the booking form with your date, place and what you need.</p></div>
+      <div class="step"><span class="num">2</span><h3>We confirm</h3><p>We reply with availability, travel fee and your final quote.</p></div>
+      <div class="step"><span class="num">3</span><h3>Party day!</h3><p>We arrive, set up and bring the smiles. You enjoy the party.</p></div>
+    </div>
+  </section>
+
+  <section id="book" class="wrap">
+    <h2>Book now 预订</h2>
+    <p class="sub">Tell us about your party — we usually reply within a day.</p>
+    <form class="booking" id="booking-form" novalidate>
+      <div class="form-msg" id="form-msg" role="alert"></div>
+      <div class="field-row">
+        <div class="field"><label for="f-name">Your name *</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="f-contact">Phone or email *</label><input id="f-contact" name="contact" type="text" autocomplete="email" required></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="f-date">Event date *</label><input id="f-date" name="date" type="date" required></div>
+        <div class="field"><label for="f-time">Start time</label><input id="f-time" name="time" type="time"></div>
+      </div>
+      <div class="field"><label for="f-address">Event address / city</label><input id="f-address" name="address" type="text" placeholder="e.g. Community centre in Burnaby"></div>
+      <div class="field">
+        <label>Services * (pick one or both — face painting &amp; balloon twisting can be done together)</label>
+        <div class="checks">
+          <label><input type="checkbox" name="service" value="Face Painting"> Face Painting</label>
+          <label><input type="checkbox" name="service" value="Balloon Twisting"> Balloon Twisting</label>
+          <label><input type="checkbox" name="service" value="Party Decoration"> Party Decoration</label>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="f-hours">Hours needed</label>
+          <select id="f-hours" name="hours"><option value="1">1 hour</option><option value="2" selected>2 hours</option><option value="3">3 hours</option><option value="4">4 hours</option><option value="5">5+ hours</option></select>
+        </div>
+        <div class="field"><label for="f-kids">Number of kids (approx.)</label><input id="f-kids" name="kids" type="number" min="1" placeholder="e.g. 20"></div>
+      </div>
+      <div class="field"><label for="f-message">Anything else? (theme, ages, special requests)</label><textarea id="f-message" name="message" rows="3"></textarea></div>
+      <div class="estimate" id="estimate">Estimate: pick a service to see an estimate.<small>Final quote confirmed when we reply. Travel fee depends on distance. Party decoration is quoted separately.</small></div>
+      <button class="btn btn-red" type="submit" style="width:100%">Send booking request 💌</button>
+      <p class="note" style="text-align:center;margin:12px 0 0">Submitting opens your email app with the details pre-filled, addressed to <span data-setting="email">ballooonvan@yahoo.com</span>.</p>
+    </form>
+  </section>
+
+  <section id="contact" class="wrap">
+    <h2>Contact 联系我们</h2>
+    <p class="sub">Questions? The fastest way is a text message.</p>
+    <div class="contact-grid">
+      <div class="contact-item"><b>Phone · Text preferred</b><a href="tel:+17788814661" data-phone-tel>778-881-4661</a><span>Text preferred — calls welcome too.</span></div>
+      <div class="contact-item"><b>Email</b><a href="mailto:ballooonvan@yahoo.com" data-email>ballooonvan@yahoo.com</a><span>Booking requests and questions.</span></div>
+      <div class="contact-item"><b>Instagram</b><a href="https://www.instagram.com/ballooonvan" target="_blank" rel="noopener">@ballooonvan</a><span>Latest work and party photos.</span></div>
+      <div class="contact-item"><b>WeChat 微信</b><a href="#" onclick="return false">KaridaYuan</a><span>By Karida Zhang · English / 中文</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Ballooon Studio · By Karida Zhang · Face Painting · Balloon Twisting · Party Decoration<br>Metro Vancouver &amp; beyond 🎈</div>
+</footer>
+
+<div class="sticky-bar">
+  <a class="btn btn-outline" href="sms:+17788814661" data-phone-sms>💬 Text us</a>
+  <a class="btn btn-red" href="#book">Book now 🎈</a>
+</div>
+
+<script>
+const DEFAULT_SETTINGS = {
+  phone: "778-881-4661", phoneNote: "Text preferred", email: "ballooonvan@yahoo.com",
+  instagram: "ballooonvan", wechat: "KaridaYuan", hourlyRate: 120,
+  serviceArea: "Metro Vancouver & beyond"
+};
+const DEFAULT_GALLERY = [
+  {image:"/assets/gallery/balloon-car.jpg", caption:"Balloon car made for a birthday girl", category:"balloon"},
+  {image:"/assets/gallery/balloon-flower.jpg", caption:"Balloon flower with a name on it", category:"balloon"},
+  {image:"/assets/gallery/party-table.jpg", caption:"Party table, balloons ready to twist", category:"balloon"},
+  {image:"/assets/gallery/balloon-sculpture.jpg", caption:"Balloon sculpture under a blue sky", category:"balloon"},
+  {image:"/assets/gallery/arm-flower.jpg", caption:"Floral arm painting with glitter", category:"facepaint"},
+  {image:"/assets/gallery/arm-rose.jpg", caption:"Pink rose arm painting", category:"facepaint"},
+  {image:"/assets/gallery/arm-tiger.jpg", caption:"Tribal tiger arm painting", category:"facepaint"},
+  {image:"/assets/gallery/arm-fish.jpg", caption:"Little fish arm painting", category:"facepaint"},
+  {image:"/assets/gallery/arm-ironman.jpg", caption:"Iron Man arm painting", category:"facepaint"}
+];
+let SETTINGS = DEFAULT_SETTINGS;
+let GALLERY = DEFAULT_GALLERY;
+let activeFilter = "all";
+
+async function loadJSON(path){
+  try{ const r = await fetch(path, {cache:"no-store"}); if(!r.ok) return null; return await r.json(); }
+  catch(e){ return null; }
+}
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+function renderGallery(){
+  const grid = document.getElementById("gallery-grid");
+  const items = GALLERY.filter(p => activeFilter==="all" || p.category===activeFilter);
+  grid.innerHTML = items.map(p =>
+    '<figure><img src="'+esc(p.image)+'" alt="'+esc(p.caption||"Ballooon Studio work")+'" loading="lazy"><figcaption>'+esc(p.caption||"")+'</figcaption></figure>'
+  ).join("") || '<p class="note">Photos coming soon.</p>';
+}
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active"); activeFilter = btn.dataset.filter; renderGallery();
+  });
+});
+
+function selectedServices(){
+  return Array.from(document.querySelectorAll('input[name="service"]:checked')).map(i => i.value);
+}
+function updateEstimate(){
+  const el = document.getElementById("estimate");
+  const hours = parseInt(document.getElementById("f-hours").value, 10) || 2;
+  const svcs = selectedServices();
+  const rate = SETTINGS.hourlyRate || 120;
+  const note = "<small>Final quote confirmed when we reply. Travel fee depends on distance. Party decoration is quoted separately.</small>";
+  if(svcs.length === 0){ el.innerHTML = "Estimate: pick a service to see an estimate." + note; return; }
+  const hourly = svcs.includes("Face Painting") || svcs.includes("Balloon Twisting");
+  const decoOnly = svcs.length === 1 && svcs[0] === "Party Decoration";
+  if(decoOnly){ el.innerHTML = "Estimate: custom quote — tell us about your party and theme!" + note; return; }
+  let text = "Estimate: " + hours + " hr × $" + rate + " = $" + (hours*rate);
+  if(svcs.includes("Party Decoration")) text += " + party decoration quoted separately";
+  if(svcs.includes("Face Painting") && svcs.includes("Balloon Twisting")) text += " — both services together!";
+  el.innerHTML = text + note;
+}
+document.querySelectorAll('input[name="service"]').forEach(i => i.addEventListener("change", updateEstimate));
+document.getElementById("f-hours").addEventListener("change", updateEstimate);
+
+document.getElementById("booking-form").addEventListener("submit", function(ev){
+  ev.preventDefault();
+  const msg = document.getElementById("form-msg");
+  const name = document.getElementById("f-name").value.trim();
+  const contact = document.getElementById("f-contact").value.trim();
+  const date = document.getElementById("f-date").value;
+  const svcs = selectedServices();
+  const missing = [];
+  if(!name) missing.push("your name");
+  if(!contact) missing.push("phone or email");
+  if(!date) missing.push("event date");
+  if(svcs.length === 0) missing.push("a service");
+  if(missing.length){
+    msg.className = "form-msg error";
+    msg.textContent = "Almost there — please add: " + missing.join(", ") + ".";
+    msg.scrollIntoView({behavior:"smooth", block:"center"});
+    return;
+  }
+  const time = document.getElementById("f-time").value;
+  const address = document.getElementById("f-address").value.trim();
+  const hours = document.getElementById("f-hours").value;
+  const kids = document.getElementById("f-kids").value;
+  const message = document.getElementById("f-message").value.trim();
+  const lines = ["New booking request from the Ballooon Studio website:", "",
+    "Name: " + name, "Contact: " + contact, "Event date: " + date,
+    "Start time: " + (time || "—"), "Address / city: " + (address || "—"),
+    "Services: " + svcs.join(", "), "Hours: " + hours,
+    "Number of kids: " + (kids || "—"), "", "Message:", message || "—"];
+  const to = SETTINGS.email || "ballooonvan@yahoo.com";
+  window.location.href = "mailto:" + encodeURIComponent(to)
+    + "?subject=" + encodeURIComponent("Booking request — " + name + " — " + date)
+    + "&body=" + encodeURIComponent(lines.join("\n"));
+  msg.className = "form-msg ok";
+  msg.textContent = "Thanks, " + name + "! Your email app should have opened with the request ready to send. We usually reply within a day. 🎈";
+});
+
+(async function init(){
+  const s = await loadJSON("/content/settings.json");
+  if(s){
+    SETTINGS = Object.assign({}, DEFAULT_SETTINGS, s);
+    document.querySelectorAll("[data-setting='serviceArea']").forEach(el => el.textContent = SETTINGS.serviceArea);
+    document.querySelectorAll("[data-setting='email']").forEach(el => el.textContent = SETTINGS.email);
+    document.querySelectorAll("[data-rate]").forEach(el => el.innerHTML = "$" + SETTINGS.hourlyRate + " <small>/ hour</small>");
+    const digits = String(SETTINGS.phone).replace(/\D/g,"");
+    document.querySelectorAll("[data-phone-tel]").forEach(a => { a.href = "tel:+1" + digits; a.textContent = SETTINGS.phone; });
+    document.querySelectorAll("[data-phone-sms]").forEach(a => { a.href = "sms:+1" + digits; });
+    document.querySelectorAll("[data-email]").forEach(a => { a.href = "mailto:" + SETTINGS.email; a.textContent = SETTINGS.email; });
+  }
+  const g = await loadJSON("/content/gallery.json");
+  if(g && Array.isArray(g.photos) && g.photos.length) GALLERY = g.photos;
+  renderGallery();
+  updateEstimate();
+})();
+</script>
+</body>
+</html>
