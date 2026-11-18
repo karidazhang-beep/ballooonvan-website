@@ -1,6 +1,6 @@
-# Ballooon Studio website
+# BallooonVan website
 
-Official website for Karida's Ballooon Studio (face painting, balloon twisting,
+Official website for Karida's BallooonVan (face painting, balloon twisting,
 party decoration) — Vancouver & beyond. Static site, $0 hosting on Cloudflare
 Pages, content editable by Karida via Sveltia CMS, code editable by Muse via Git.
 
@@ -86,4 +86,4 @@ the mailto form as fallback until Tally is verified live.
   total. Update if the owner confirms a combo rate.
 - Service area: Metro Vancouver & beyond — other places welcome.
 - No children's faces in photos or designs.
-- Brand spelling: **Ballooonvan** (three o's) / Ballooon Studio.
+- Brand spelling: **Ballooonvan** (three o's) / BallooonVan.
