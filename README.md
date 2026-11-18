@@ -10,8 +10,9 @@ Pages, content editable by Karida via Sveltia CMS, code editable by Muse via Git
   pricing, booking form, contact). Content loads from `content/*.json` with
   built-in fallbacks, so the page works even if a JSON file is missing.
 - `assets/gallery/` — gallery photos (compressed, max 1200px). Rule from the
-  owner: **no children's faces in public designs** — only use photos without
-  identifiable children's faces.
+  owner: generally **no children's faces in public designs** — only use photos
+  without identifiable children's faces, unless the owner confirms otherwise
+  for that specific photo (see the 2026-11-18 exception in Content rules).
 - `content/settings.json` — phone, email, prices, service area (editable in CMS).
 - `content/gallery.json` — gallery photos, captions, categories (editable in CMS).
 - `admin/` — Sveltia CMS admin page + config (`/admin` on the live site).
@@ -85,5 +86,9 @@ the mailto form as fallback until Tally is verified live.
   price is UNCONFIRMED — the site says "Book both together!" with no invented
   total. Update if the owner confirms a combo rate.
 - Service area: Metro Vancouver & beyond — other places welcome.
-- No children's faces in photos or designs.
+- No children's faces in photos or designs, except `facepaint-collage.jpg`
+  (2026-11-18: owner confirmed publishing it as-is, with children's faces and
+  its BALLOOON STUDIO watermark, after being reminded of this rule and the
+  BallooonVan brand decision). Check with the owner before adding any other
+  photo showing children's faces.
 - Brand spelling: **Ballooonvan** (three o's) / BallooonVan.
