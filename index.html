@@ -32,7 +32,7 @@ img{max-width:100%;display:block}
 header.top{position:sticky;top:0;z-index:50;background:rgba(255,251,239,.92);backdrop-filter:blur(6px);border-bottom:2px solid #F5E9C8}
 .nav{display:flex;align-items:center;gap:14px;padding:10px 0}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:22px}
-.logo svg{width:44px;height:44px;flex:none}
+.logo img{height:44px;width:auto;flex:none}
 .logo small{display:block;font-family:"Quicksand",sans-serif;font-size:12px;font-weight:600;color:var(--ink-soft);letter-spacing:.04em}
 .nav-links{margin-left:auto;display:flex;gap:18px;font-weight:600}
 .nav-links a{text-decoration:none}
@@ -44,7 +44,7 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(255,251,239,.92);bac
 .btn-outline{background:#fff;border:2px solid var(--ink);color:var(--ink)}
 .hero{padding:44px 0 10px;text-align:center;position:relative;overflow:hidden}
 .hero-balloons{display:flex;justify-content:center;gap:6px;margin-bottom:6px}
-.hero-balloons svg{width:74px;height:74px}
+.hero-balloons img{height:88px;width:auto}
 .float{animation:floaty 3.2s ease-in-out infinite}
 .float.d2{animation-delay:.6s}.float.d3{animation-delay:1.2s}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -130,7 +130,7 @@ footer{margin-top:48px;padding:26px 0 90px;text-align:center;color:var(--ink-sof
 <header class="top">
   <div class="wrap nav">
     <a class="logo" href="#top" aria-label="BallooonVan home">
-      <svg viewBox="0 0 120 64" aria-hidden="true"><g><path d="M28 4 C42 4 51 15 51 28 C51 40 43 48 28 50 C13 48 5 40 5 28 C5 15 14 4 28 4 Z" fill="#E23B3B"/><path d="M24 48 Q28 45 32 48 L30 55 Q28 57 26 55 Z" fill="#C22F2F"/><ellipse cx="21" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><ellipse cx="35" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><path d="M21 30 Q28 37 35 30" stroke="#3A2E2A" stroke-width="2.6" fill="none" stroke-linecap="round"/><ellipse cx="17" cy="29" rx="3.6" ry="2.5" fill="#FF9FAF" opacity=".8"/><ellipse cx="39" cy="29" rx="3.6" ry="2.5" fill="#FF9FAF" opacity=".8"/></g><g><path d="M62 4 C76 4 85 15 85 28 C85 40 77 48 62 50 C47 48 39 40 39 28 C39 15 48 4 62 4 Z" fill="#2FA37C"/><path d="M58 48 Q62 45 66 48 L64 55 Q62 57 60 55 Z" fill="#248763"/><ellipse cx="55" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><ellipse cx="69" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><path d="M55 30 Q62 37 69 30" stroke="#3A2E2A" stroke-width="2.6" fill="none" stroke-linecap="round"/><ellipse cx="51" cy="29" rx="3.6" ry="2.5" fill="#FF9FAF" opacity=".8"/><ellipse cx="73" cy="29" rx="3.6" ry="2.5" fill="#FF9FAF" opacity=".8"/></g><g><path d="M96 4 C110 4 119 15 119 28 C119 40 111 48 96 50 C81 48 73 40 73 28 C73 15 82 4 96 4 Z" fill="#FFC53D"/><path d="M92 48 Q96 45 100 48 L98 55 Q96 57 94 55 Z" fill="#E9A820"/><ellipse cx="89" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><ellipse cx="103" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><path d="M89 30 Q96 37 103 30" stroke="#3A2E2A" stroke-width="2.6" fill="none" stroke-linecap="round"/><ellipse cx="85" cy="29" rx="3.6" ry="2.5" fill="#FF9FAF" opacity=".8"/><ellipse cx="107" cy="29" rx="3.6" ry="2.5" fill="#FF9FAF" opacity=".8"/></g></svg>
+      <img src="/assets/logo-balloons.png" alt="" width="865" height="350">
       <span>BallooonVan<small>FACE PAINTING &nbsp;•&nbsp; BALLOONS &nbsp;•&nbsp; PARTIES</small></span>
     </a>
     <nav class="nav-links">
@@ -142,9 +142,9 @@ footer{margin-top:48px;padding:26px 0 90px;text-align:center;color:var(--ink-sof
 <main id="top">
   <section class="hero wrap">
     <div class="hero-balloons" aria-hidden="true">
-      <svg class="float" viewBox="0 0 64 64"><path d="M32 4 C46 4 55 15 55 28 C55 40 47 48 32 50 C17 48 9 40 9 28 C9 15 18 4 32 4 Z" fill="#E23B3B"/><path d="M28 48 Q32 45 36 48 L34 55 Q32 57 30 55 Z" fill="#C22F2F"/><ellipse cx="24" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><ellipse cx="40" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><path d="M24 30 Q32 37 40 30" stroke="#3A2E2A" stroke-width="2.8" fill="none" stroke-linecap="round"/><ellipse cx="19" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/><ellipse cx="45" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/></svg>
-      <svg class="float d2" viewBox="0 0 64 64"><path d="M32 4 C46 4 55 15 55 28 C55 40 47 48 32 50 C17 48 9 40 9 28 C9 15 18 4 32 4 Z" fill="#FFC53D"/><path d="M28 48 Q32 45 36 48 L34 55 Q32 57 30 55 Z" fill="#E9A820"/><ellipse cx="24" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><ellipse cx="40" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><path d="M24 30 Q32 37 40 30" stroke="#3A2E2A" stroke-width="2.8" fill="none" stroke-linecap="round"/><ellipse cx="19" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/><ellipse cx="45" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/></svg>
-      <svg class="float d3" viewBox="0 0 64 64"><path d="M32 4 C46 4 55 15 55 28 C55 40 47 48 32 50 C17 48 9 40 9 28 C9 15 18 4 32 4 Z" fill="#2FA37C"/><path d="M28 48 Q32 45 36 48 L34 55 Q32 57 30 55 Z" fill="#248763"/><ellipse cx="24" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><ellipse cx="40" cy="23" rx="2.6" ry="3.2" fill="#3A2E2A"/><path d="M24 30 Q32 37 40 30" stroke="#3A2E2A" stroke-width="2.8" fill="none" stroke-linecap="round"/><ellipse cx="19" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/><ellipse cx="45" cy="29" rx="4" ry="2.8" fill="#FF9FAF" opacity=".85"/></svg>
+      <img class="float" src="/assets/balloon-red.png" alt="" width="296" height="350">
+      <img class="float d2" src="/assets/balloon-green.png" alt="" width="296" height="348">
+      <img class="float d3" src="/assets/balloon-yellow.png" alt="" width="295" height="347">
     </div>
     <h1><span class="w1">Face Painting</span> &amp; <span class="w2">Balloon Twisting</span><br><span class="w3">for unforgettable parties</span></h1>
     <p class="lead">Hi, I&rsquo;m Karida! I bring the colour to birthdays, festivals and family events — beautiful face paint, fun balloon animals, and party decoration.</p>
