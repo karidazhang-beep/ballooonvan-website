@@ -82,6 +82,22 @@ section .sub{text-align:center;color:var(--ink-soft);margin:0 0 24px}
 .gallery figure{margin:0;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
 .gallery img{width:100%;height:240px;object-fit:cover}
 .gallery figcaption{padding:10px 14px;font-size:14px;font-weight:600;color:var(--ink-soft)}
+.insta-strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px 2px 16px;-webkit-overflow-scrolling:touch}
+.insta-strip::-webkit-scrollbar{display:none}
+.insta-card{flex:0 0 280px;scroll-snap-align:start;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.insta-card a{display:block;text-decoration:none}
+.insta-card img{width:100%;height:320px;object-fit:cover}
+.insta-card figcaption{padding:10px 14px;font-size:14px;font-weight:600;color:var(--ink-soft)}
+.insta-wrap{position:relative}
+.insta-arrow{position:absolute;top:138px;z-index:5;width:44px;height:44px;border-radius:50%;border:0;background:#fff;box-shadow:var(--shadow);font-size:24px;line-height:1;cursor:pointer;color:var(--ink)}
+.insta-arrow.prev{left:-6px}
+.insta-arrow.next{right:-6px}
+.insta-arrow:hover{background:var(--ink);color:#fff}
+.insta-follow{display:flex;justify-content:center;margin:6px 0 0}
+.insta-follow a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px}
+.insta-follow a:hover{color:var(--red)}
+.insta-icon{width:44px;height:44px;flex:none}
+@media (max-width:760px){.insta-card{flex-basis:240px}.insta-card img{height:280px}.insta-arrow{display:none}}
 .pricing-box{max-width:760px;margin:0 auto;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 28px}
 .pricing-box table{width:100%;border-collapse:collapse}
 .pricing-box td{padding:12px 4px;border-bottom:2px dashed #F0DFB2;font-size:17px}
@@ -223,6 +239,17 @@ footer{margin-top:48px;padding:26px 0 90px;text-align:center;color:var(--ink-sof
     <div class="gallery" id="gallery-grid"></div>
   </section>
 
+  <section id="instagram" class="wrap">
+    <h2>Fresh from Instagram</h2>
+    <p class="sub">Swipe through our latest balloon work — tap any photo to see it on Instagram.</p>
+    <div class="insta-wrap">
+      <button class="insta-arrow prev" type="button" aria-label="Previous photos" onclick="scrollInsta(-1)">‹</button>
+      <div class="insta-strip" id="insta-strip"></div>
+      <button class="insta-arrow next" type="button" aria-label="Next photos" onclick="scrollInsta(1)">›</button>
+    </div>
+    <p class="insta-follow"><a href="https://www.instagram.com/ballooonvan" target="_blank" rel="noopener"><svg class="insta-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><defs><linearGradient id="igGrad" x1="6" y1="42" x2="42" y2="6" gradientUnits="userSpaceOnUse"><stop stop-color="#FEDA75"/><stop offset=".55" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="5" y="5" width="38" height="38" rx="11" stroke="url(#igGrad)" stroke-width="3"/><circle cx="24" cy="24" r="9" stroke="url(#igGrad)" stroke-width="3"/><circle cx="34.6" cy="13.4" r="2.6" fill="url(#igGrad)"/></svg>@ballooonvan</a></p>
+  </section>
+
   <section id="pricing" class="wrap">
     <h2>Pricing 价格</h2>
     <p class="sub">Simple, honest pricing. Final quote confirmed when we reply.</p>
@@ -326,6 +353,19 @@ const DEFAULT_GALLERY = [
 ];
 let SETTINGS = DEFAULT_SETTINGS;
 let GALLERY = DEFAULT_GALLERY;
+const DEFAULT_INSTAGRAM = [
+  {image:"/assets/gallery/ig-hello-kitty.jpg", caption:"Hello Kitty balloon birthday setup", post:"https://www.instagram.com/p/DKESERLRnCh/"},
+  {image:"/assets/gallery/ig-princess-giftbox.jpg", caption:"Princess-style pink and white balloon gift box", post:"https://www.instagram.com/p/DJ-mbGYvD1m/"},
+  {image:"/assets/gallery/ig-proposal-heart.jpg", caption:"Proposal balloon heart made of a thousand balloons", post:"https://www.instagram.com/p/DJ8LCFWJk0J/"},
+  {image:"/assets/gallery/ig-balloon-favours.jpg", caption:"Handmade balloon animal party favours", post:"https://www.instagram.com/p/DJ5qqaHxblE/"},
+  {image:"/assets/gallery/ig-lion-dance.jpg", caption:"Pastel balloon lion dance", post:"https://www.instagram.com/p/DJ0ZYkdJHaA/"},
+  {image:"/assets/gallery/ig-birthday-elegant.jpg", caption:"Simple, elegant birthday balloon setup", post:"https://www.instagram.com/p/DJxzK-UJfZF/"},
+  {image:"/assets/gallery/ig-mothers-day.jpg", caption:"Mother's Day balloon bouquets", post:"https://www.instagram.com/p/DJvmsYNxLJO/"},
+  {image:"/assets/gallery/ig-christmas-tree.jpg", caption:"Colourful Christmas tree balloon decor", post:"https://www.instagram.com/p/DD3v825Rn9j/"},
+  {image:"/assets/gallery/ig-christmas-designs.jpg", caption:"Christmas balloon designs", post:"https://www.instagram.com/p/DD3u1enRqkl/"},
+  {image:"/assets/gallery/ig-god-of-wealth.jpg", caption:"God of Wealth balloon sculpture (video)", post:"https://www.instagram.com/reel/DJsNW2EBoot/"}
+];
+let INSTAGRAM = DEFAULT_INSTAGRAM;
 let activeFilter = "all";
 
 async function loadJSON(path){
@@ -405,6 +445,25 @@ document.getElementById("booking-form").addEventListener("submit", function(ev){
   msg.textContent = "Thanks, " + name + "! Your email app should have opened with the request ready to send. We usually reply within a day. 🎈";
 });
 
+
+function renderInstagram(){
+  const strip = document.getElementById("insta-strip");
+  if(!strip) return;
+  strip.innerHTML = INSTAGRAM.map(p =>
+    `<figure class="insta-card"><a href="${p.post}" target="_blank" rel="noopener"><img src="${p.image}" alt="${p.caption}" loading="lazy"></a><figcaption>${p.caption}</figcaption></figure>`
+  ).join("");
+}
+function scrollInsta(dir){
+  const strip = document.getElementById("insta-strip");
+  if(!strip) return;
+  strip.scrollBy({left: dir * 300, behavior:"smooth"});
+}
+async function loadInstagram(){
+  const g = await loadJSON("/content/instagram.json");
+  if(g && Array.isArray(g.photos) && g.photos.length) INSTAGRAM = g.photos;
+  renderInstagram();
+}
+
 (async function init(){
   const s = await loadJSON("/content/settings.json");
   if(s){
@@ -420,6 +479,7 @@ document.getElementById("booking-form").addEventListener("submit", function(ev){
   const g = await loadJSON("/content/gallery.json");
   if(g && Array.isArray(g.photos) && g.photos.length) GALLERY = g.photos;
   renderGallery();
+  loadInstagram();
   updateEstimate();
 })();
 </script>
