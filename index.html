@@ -122,6 +122,19 @@ form.booking{max-width:680px;margin:0 auto;background:var(--card);border-radius:
 .contact-item a{font-weight:700;font-size:19px;text-decoration:none}
 .contact-item a:hover{text-decoration:underline}
 .contact-item span{font-size:14px;color:var(--ink-soft);display:block}
+.contact-item.whatsapp{grid-column:1/-1;background:#EAFBF1;border:2px solid #25D366}
+.contact-item.whatsapp b{color:#128C4A}
+.contact-item.whatsapp a{color:#128C4A}
+.contact-item .ic{width:22px;height:22px;vertical-align:-4px;margin-right:6px}
+.wa-icon{width:24px;height:24px;vertical-align:-5px;margin-right:6px}
+.copy-chip{display:flex;align-items:center;gap:8px;width:100%;background:#fff;border:2px solid var(--ink);border-radius:12px;padding:10px 12px;font:inherit;font-weight:700;font-size:19px;color:var(--ink);cursor:pointer;text-align:left}
+.copy-chip:hover{background:#FFF6D6}
+.copy-chip.copied{border-color:var(--green);background:#E7F6EF}
+.copy-chip .chip-icon{width:26px;height:26px;flex:none}
+.copy-chip .chip-handle{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.copy-chip .copy-state{font-size:13px;font-weight:700;color:var(--ink-soft);border:1.5px solid var(--ink-soft);border-radius:999px;padding:3px 10px;flex:none}
+.copy-chip.copied .copy-state{color:var(--green);border-color:var(--green)}
+.copy-chip .copy-icon{width:18px;height:18px;flex:none;color:var(--ink-soft)}
 footer{margin-top:48px;padding:26px 0 90px;text-align:center;color:var(--ink-soft);font-size:14px}
 .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,251,239,.96);border-top:2px solid #F0DFB2}
 .sticky-bar a{flex:1;text-align:center}
@@ -291,12 +304,13 @@ footer{margin-top:48px;padding:26px 0 90px;text-align:center;color:var(--ink-sof
 
   <section id="contact" class="wrap">
     <h2>Contact 联系我们</h2>
-    <p class="sub">Questions? The fastest way is a text message.</p>
+    <p class="sub">Pick the easiest way to reach us — WhatsApp, text, or email.</p>
     <div class="contact-grid">
-      <div class="contact-item"><b>Phone · Text preferred</b><a href="tel:+17788814661" data-phone-tel>778-881-4661</a><span>Text preferred — calls welcome too.</span></div>
-      <div class="contact-item"><b>Email</b><a href="mailto:ballooonvan@yahoo.com" data-email>ballooonvan@yahoo.com</a><span>Booking requests and questions.</span></div>
-      <div class="contact-item"><b>Instagram</b><a href="https://www.instagram.com/ballooonvan" target="_blank" rel="noopener">@ballooonvan</a><span>Latest work and party photos.</span></div>
-      <div class="contact-item"><b>WeChat 微信</b><a href="#" onclick="return false">KaridaYuan</a><span>By Karida Zhang · English / 中文</span></div>
+      <div class="contact-item whatsapp"><b>WhatsApp</b><a href="https://wa.me/17788814661?text=Hi%20BallooonVan!%20I%27d%20like%20to%20ask%20about%20booking%20a%20party" target="_blank" rel="noopener" data-whatsapp><img class="wa-icon" src="/assets/whatsapp-icon.png" alt="WhatsApp">Chat on WhatsApp</a><span>Opens a chat directly — fastest reply.</span></div>
+      <div class="contact-item"><b>Phone · Text preferred</b><a href="tel:+17788814661" data-phone-tel><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>778-881-4661</a><span>Text preferred — calls welcome too.</span></div>
+      <div class="contact-item"><b>Email</b><a href="mailto:ballooonvan@yahoo.com" data-email><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>ballooonvan@yahoo.com</a><span>Booking requests and questions.</span></div>
+      <div class="contact-item"><b>Instagram</b><button class="copy-chip" type="button" onclick="copyHandle(this, '@ballooonvan')"><svg class="chip-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><defs><linearGradient id="igGrad2" x1="6" y1="42" x2="42" y2="6" gradientUnits="userSpaceOnUse"><stop stop-color="#FEDA75"/><stop offset=".55" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="5" y="5" width="38" height="38" rx="11" stroke="url(#igGrad2)" stroke-width="3"/><circle cx="24" cy="24" r="9" stroke="url(#igGrad2)" stroke-width="3"/><circle cx="34.6" cy="13.4" r="2.6" fill="url(#igGrad2)"/></svg><span class="chip-handle">@ballooonvan</span><svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-state">Copy</span></button><span>Tap to copy the handle. <a href="https://www.instagram.com/ballooonvan" target="_blank" rel="noopener">Open profile ↗</a></span></div>
+      <div class="contact-item"><b>WeChat 微信</b><button class="copy-chip" type="button" onclick="copyHandle(this, 'KaridaYuan')"><svg class="chip-icon" viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="19" cy="19" rx="13" ry="10" fill="#07C160"/><path d="M10 27l-2 5 6-3z" fill="#07C160"/><ellipse cx="32" cy="30" rx="10" ry="8" fill="#07C160"/><path d="M39 36l2 4-5-2z" fill="#07C160"/><circle cx="15" cy="19" r="1.8" fill="#fff"/><circle cx="23" cy="19" r="1.8" fill="#fff"/><circle cx="29" cy="30" r="1.6" fill="#fff"/><circle cx="35" cy="30" r="1.6" fill="#fff"/></svg><span class="chip-handle">KaridaYuan</span><svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-state">Copy</span></button><span>Tap to copy — add us on WeChat.</span></div>
     </div>
   </section>
 </main>
@@ -318,18 +332,18 @@ const DEFAULT_SETTINGS = {
 };
 let SETTINGS = DEFAULT_SETTINGS;
 const DEFAULT_INSTAGRAM = [
-  {image:"/assets/gallery/ig-hello-kitty.jpg", caption:"Hello Kitty balloon birthday setup", post:"https://www.instagram.com/p/DKESERLRnCh/"},
+  {image:"/assets/gallery/ig-balloon-crown.jpg", caption:"Balloon crown and face paint", post:"https://www.instagram.com/p/DaTmroMATIb/"},
   {image:"/assets/gallery/ig-halloween-skull.jpg", caption:"Halloween skull face paint", post:"https://www.instagram.com/p/DfMCt1QFIuW/"},
   {image:"/assets/gallery/ig-garden-cheeks.jpg", caption:"Flower garden cheek paint", post:"https://www.instagram.com/p/DexqUxZGJZY/"},
-  {image:"/assets/gallery/ig-princess-giftbox.jpg", caption:"Princess-style pink and white balloon gift box", post:"https://www.instagram.com/p/DJ-mbGYvD1m/"},
+  {image:"/assets/gallery/ig-hello-kitty.jpg", caption:"Hello Kitty balloon birthday setup", post:"https://www.instagram.com/p/DKESERLRnCh/"},
   {image:"/assets/gallery/ig-princess-collection.jpg", caption:"Princess face painting collection", post:"https://www.instagram.com/p/Der6AtAD0Cg/"},
   {image:"/assets/gallery/ig-birthday-boy.jpg", caption:"Birthday boy with spiderweb face paint", post:"https://www.instagram.com/p/Dej6_5YmnVs/"},
+  {image:"/assets/gallery/ig-princess-giftbox.jpg", caption:"Princess-style pink and white balloon gift box", post:"https://www.instagram.com/p/DJ-mbGYvD1m/"},
   {image:"/assets/gallery/ig-proposal-heart.jpg", caption:"Proposal balloon heart made of a thousand balloons", post:"https://www.instagram.com/p/DJ8LCFWJk0J/"},
   {image:"/assets/gallery/ig-unicorn-girl.jpg", caption:"Unicorn face paint", post:"https://www.instagram.com/p/DdErOVZhQt4/"},
   {image:"/assets/gallery/ig-ocean-arm.jpg", caption:"Ocean arm painting — little fish", post:"https://www.instagram.com/p/DbrNASnATPe/"},
   {image:"/assets/gallery/ig-balloon-favours.jpg", caption:"Handmade balloon animal party favours", post:"https://www.instagram.com/p/DJ5qqaHxblE/"},
   {image:"/assets/gallery/ig-candy-cane.jpg", caption:"Candy cane birthday face paint", post:"https://www.instagram.com/p/DacVPjWlNB2/"},
-  {image:"/assets/gallery/ig-balloon-crown.jpg", caption:"Balloon crown and face paint", post:"https://www.instagram.com/p/DaTmroMATIb/"},
   {image:"/assets/gallery/ig-lion-dance.jpg", caption:"Pastel balloon lion dance", post:"https://www.instagram.com/p/DJ0ZYkdJHaA/"},
   {image:"/assets/gallery/ig-party-girl.jpg", caption:"Birthday girl with butterfly face paint", post:"https://www.instagram.com/p/DZOy8MWlFzl/"},
   {image:"/assets/gallery/ig-floral-selfie.jpg", caption:"Pink floral face paint", post:"https://www.instagram.com/p/DMocD4dPIXO/"},
@@ -430,6 +444,25 @@ async function loadInstagram(){
   renderInstagram();
 }
 
+
+async function copyHandle(btn, text){
+  const state = btn.querySelector(".copy-state");
+  const done = () => {
+    const orig = state.textContent;
+    state.textContent = "Copied!";
+    btn.classList.add("copied");
+    setTimeout(() => { state.textContent = orig; btn.classList.remove("copied"); }, 2000);
+  };
+  try { await navigator.clipboard.writeText(text); done(); }
+  catch(e){
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); done(); } catch(e2) {}
+    document.body.removeChild(ta);
+  }
+}
+
 (async function init(){
   const s = await loadJSON("/content/settings.json");
   if(s){
@@ -440,6 +473,7 @@ async function loadInstagram(){
     const digits = String(SETTINGS.phone).replace(/\D/g,"");
     document.querySelectorAll("[data-phone-tel]").forEach(a => { a.href = "tel:+1" + digits; a.textContent = SETTINGS.phone; });
     document.querySelectorAll("[data-phone-sms]").forEach(a => { a.href = "sms:+1" + digits; });
+    document.querySelectorAll("[data-whatsapp]").forEach(a => { a.href = "https://wa.me/1" + digits + "?text=" + encodeURIComponent("Hi BallooonVan! I'd like to ask about booking a party."); });
     document.querySelectorAll("[data-email]").forEach(a => { a.href = "mailto:" + SETTINGS.email; a.textContent = SETTINGS.email; });
   }
   loadInstagram();

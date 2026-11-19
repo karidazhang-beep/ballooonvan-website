@@ -23,6 +23,8 @@ Pages, content editable by Karida via Sveltia CMS, code editable by Muse via Git
 - `content/instagram.json` — Instagram carousel photos, captions and post
   links (editable in CMS under **Instagram Carousel** — drag the photos to
   reorder them; the site shows them in that order).
+- `assets/whatsapp-icon.png` — WhatsApp mark used in the Contact
+  section (official logo, grey outer ring removed 2026-11-19).
 - `admin/` — Sveltia CMS admin page + config (`/admin` on the live site).
 
 ## How Karida edits the site (no code)
