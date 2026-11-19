@@ -1,9 +1,9 @@
 {
   "photos": [
     {
-      "image": "/assets/gallery/ig-hello-kitty.jpg",
-      "caption": "Hello Kitty balloon birthday setup",
-      "post": "https://www.instagram.com/p/DKESERLRnCh/"
+      "image": "/assets/gallery/ig-balloon-crown.jpg",
+      "caption": "Balloon crown and face paint",
+      "post": "https://www.instagram.com/p/DaTmroMATIb/"
     },
     {
       "image": "/assets/gallery/ig-halloween-skull.jpg",
@@ -16,9 +16,9 @@
       "post": "https://www.instagram.com/p/DexqUxZGJZY/"
     },
     {
-      "image": "/assets/gallery/ig-princess-giftbox.jpg",
-      "caption": "Princess-style pink and white balloon gift box",
-      "post": "https://www.instagram.com/p/DJ-mbGYvD1m/"
+      "image": "/assets/gallery/ig-hello-kitty.jpg",
+      "caption": "Hello Kitty balloon birthday setup",
+      "post": "https://www.instagram.com/p/DKESERLRnCh/"
     },
     {
       "image": "/assets/gallery/ig-princess-collection.jpg",
@@ -29,6 +29,11 @@
       "image": "/assets/gallery/ig-birthday-boy.jpg",
       "caption": "Birthday boy with spiderweb face paint",
       "post": "https://www.instagram.com/p/Dej6_5YmnVs/"
+    },
+    {
+      "image": "/assets/gallery/ig-princess-giftbox.jpg",
+      "caption": "Princess-style pink and white balloon gift box",
+      "post": "https://www.instagram.com/p/DJ-mbGYvD1m/"
     },
     {
       "image": "/assets/gallery/ig-proposal-heart.jpg",
@@ -42,7 +47,7 @@
     },
     {
       "image": "/assets/gallery/ig-ocean-arm.jpg",
-      "caption": "Ocean arm painting \u2014 little fish",
+      "caption": "Ocean arm painting — little fish",
       "post": "https://www.instagram.com/p/DbrNASnATPe/"
     },
     {
@@ -54,11 +59,6 @@
       "image": "/assets/gallery/ig-candy-cane.jpg",
       "caption": "Candy cane birthday face paint",
       "post": "https://www.instagram.com/p/DacVPjWlNB2/"
-    },
-    {
-      "image": "/assets/gallery/ig-balloon-crown.jpg",
-      "caption": "Balloon crown and face paint",
-      "post": "https://www.instagram.com/p/DaTmroMATIb/"
     },
     {
       "image": "/assets/gallery/ig-lion-dance.jpg",
