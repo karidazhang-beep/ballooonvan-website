@@ -55,3 +55,19 @@ collections:
                 options:
                   - { label: Face Painting, value: facepaint }
                   - { label: Balloon Twisting, value: balloon }
+
+  - name: instagram
+    label: Instagram Carousel
+    files:
+      - name: instagram
+        label: Carousel photos (drag to reorder)
+        file: content/instagram.json
+        fields:
+          - name: photos
+            label: Photos
+            widget: list
+            summary: "{{fields.caption}}"
+            fields:
+              - { name: image, label: Photo, widget: image }
+              - { name: caption, label: Caption, widget: string, required: false }
+              - { name: post, label: Instagram post link, widget: string }

@@ -20,6 +20,9 @@ Pages, content editable by Karida via Sveltia CMS, code editable by Muse via Git
   CMS, but the Gallery section was removed 2026-11-19 — this file is dormant
   and not displayed; the Instagram carousel in `content/instagram.json` is
   the only photo display).
+- `content/instagram.json` — Instagram carousel photos, captions and post
+  links (editable in CMS under **Instagram Carousel** — drag the photos to
+  reorder them; the site shows them in that order).
 - `admin/` — Sveltia CMS admin page + config (`/admin` on the live site).
 
 ## How Karida edits the site (no code)
@@ -27,9 +30,11 @@ Pages, content editable by Karida via Sveltia CMS, code editable by Muse via Git
 1. Open `https://ballooonvan.com/admin` (or the `.pages.dev` URL before the
    domain is attached) and sign in with GitHub. Sveltia accepts a fine-grained
    personal access token (PAT) for sign-in — no OAuth App needed.
-2. Edit **Site Settings** (phone, prices, wording) or **Photo Gallery**
-   (add/replace photos, captions, categories) and save. Saving commits to
-   GitHub; Cloudflare Pages rebuilds automatically (about a minute).
+2. Edit **Site Settings** (phone, prices, wording), **Instagram Carousel**
+   (drag photos to reorder, or add/remove photos) or **Photo Gallery**
+   (dormant — the Gallery section was removed, so edits here do nothing
+   visible) and save. Saving commits to GitHub; Cloudflare Pages rebuilds
+   automatically (about a minute).
 3. Photos uploaded through the CMS land in `assets/gallery/`.
 
 ## How Muse edits the site (code + content)
