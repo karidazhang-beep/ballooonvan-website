@@ -75,13 +75,6 @@ section .sub{text-align:center;color:var(--ink-soft);margin:0 0 24px}
 .showcase figcaption{padding:14px 18px 16px}
 .showcase figcaption strong{display:block;font-family:"Baloo 2",sans-serif;font-size:19px}
 .showcase figcaption span{color:var(--ink-soft);font-size:14px;font-weight:600}
-.filters{display:flex;gap:10px;justify-content:center;margin-bottom:18px;flex-wrap:wrap}
-.filter-btn{border:2px solid var(--ink);background:#fff;border-radius:999px;padding:8px 18px;font-weight:700;cursor:pointer;font-family:inherit;font-size:15px}
-.filter-btn.active{background:var(--ink);color:#fff}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.gallery figure{margin:0;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
-.gallery img{width:100%;height:240px;object-fit:cover}
-.gallery figcaption{padding:10px 14px;font-size:14px;font-weight:600;color:var(--ink-soft)}
 .insta-strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px 2px 16px;-webkit-overflow-scrolling:touch}
 .insta-strip::-webkit-scrollbar{display:none}
 .insta-card{flex:0 0 280px;scroll-snap-align:start;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
@@ -134,15 +127,12 @@ footer{margin-top:48px;padding:26px 0 90px;text-align:center;color:var(--ink-sof
 .sticky-bar a{flex:1;text-align:center}
 @media (max-width:760px){
   .services,.steps,.showcase{grid-template-columns:1fr}
-  .gallery{grid-template-columns:repeat(2,1fr)}
-  .gallery img{height:180px}
   .nav-links{display:none}
   .contact-grid{grid-template-columns:1fr}
   .field-row{grid-template-columns:1fr}
   .sticky-bar{display:flex}
   footer{padding-bottom:110px}
 }
-@media (max-width:420px){.gallery{grid-template-columns:1fr}.gallery img{height:230px}}
 </style>
 <script type="application/ld+json" id="schema-json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"BallooonVan","description":"Face painting, balloon twisting and party decoration for birthdays and parties in Metro Vancouver and beyond.","telephone":"+1-778-881-4661","email":"ballooonvan@yahoo.com","url":"https://ballooonvan.com","priceRange":"$120/hr","founder":{"@type":"Person","name":"Karida Zhang"},"areaServed":"Metro Vancouver and beyond","sameAs":["https://www.instagram.com/ballooonvan"]}
@@ -156,7 +146,7 @@ footer{margin-top:48px;padding:26px 0 90px;text-align:center;color:var(--ink-sof
       <span>BallooonVan<small>FACE PAINTING &nbsp;•&nbsp; BALLOONS &nbsp;•&nbsp; PARTIES</small></span>
     </a>
     <nav class="nav-links">
-      <a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#pricing">Pricing</a><a href="#book">Book now</a>
+      <a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#book">Book now</a>
     </nav>
   </div>
 </header>
@@ -226,17 +216,6 @@ footer{margin-top:48px;padding:26px 0 90px;text-align:center;color:var(--ink-sof
         <figcaption><strong>Balloon Twisting examples</strong><span>Animals, characters &amp; custom sculptures, twisted live.</span></figcaption>
       </figure>
     </div>
-  </section>
-
-  <section id="gallery" class="wrap">
-    <h2>Gallery 作品</h2>
-    <p class="sub">Real work from real parties.</p>
-    <div class="filters" role="group" aria-label="Filter gallery">
-      <button class="filter-btn active" data-filter="all" type="button">All</button>
-      <button class="filter-btn" data-filter="facepaint" type="button">Face Painting</button>
-      <button class="filter-btn" data-filter="balloon" type="button">Balloon Twisting</button>
-    </div>
-    <div class="gallery" id="gallery-grid"></div>
   </section>
 
   <section id="instagram" class="wrap">
@@ -337,22 +316,7 @@ const DEFAULT_SETTINGS = {
   instagram: "ballooonvan", wechat: "KaridaYuan", hourlyRate: 120,
   serviceArea: "Metro Vancouver & beyond"
 };
-const DEFAULT_GALLERY = [
-  {image:"/assets/gallery/birthday-facepaint.jpg", caption:"Birthday face paint at a Frozen-themed party", category:"facepaint"},
-  {image:"/assets/gallery/balloon-dragon.jpg", caption:"White balloon dragon sculpture", category:"balloon"},
-  {image:"/assets/gallery/balloon-garland-white.jpg", caption:"White balloon garland for a dinner party", category:"balloon"},
-  {image:"/assets/gallery/balloon-car.jpg", caption:"Balloon car made for a birthday girl", category:"balloon"},
-  {image:"/assets/gallery/balloon-flower.jpg", caption:"Balloon flower with a name on it", category:"balloon"},
-  {image:"/assets/gallery/party-table.jpg", caption:"Party table, balloons ready to twist", category:"balloon"},
-  {image:"/assets/gallery/balloon-sculpture.jpg", caption:"Balloon sculpture under a blue sky", category:"balloon"},
-  {image:"/assets/gallery/arm-flower.jpg", caption:"Floral arm painting with glitter", category:"facepaint"},
-  {image:"/assets/gallery/arm-rose.jpg", caption:"Pink rose arm painting", category:"facepaint"},
-  {image:"/assets/gallery/arm-tiger.jpg", caption:"Tribal tiger arm painting", category:"facepaint"},
-  {image:"/assets/gallery/arm-fish.jpg", caption:"Little fish arm painting", category:"facepaint"},
-  {image:"/assets/gallery/arm-ironman.jpg", caption:"Iron Man arm painting", category:"facepaint"}
-];
 let SETTINGS = DEFAULT_SETTINGS;
-let GALLERY = DEFAULT_GALLERY;
 const DEFAULT_INSTAGRAM = [
   {image:"/assets/gallery/ig-hello-kitty.jpg", caption:"Hello Kitty balloon birthday setup", post:"https://www.instagram.com/p/DKESERLRnCh/"},
   {image:"/assets/gallery/ig-princess-giftbox.jpg", caption:"Princess-style pink and white balloon gift box", post:"https://www.instagram.com/p/DJ-mbGYvD1m/"},
@@ -366,30 +330,10 @@ const DEFAULT_INSTAGRAM = [
   {image:"/assets/gallery/ig-god-of-wealth.jpg", caption:"God of Wealth balloon sculpture (video)", post:"https://www.instagram.com/reel/DJsNW2EBoot/"}
 ];
 let INSTAGRAM = DEFAULT_INSTAGRAM;
-let activeFilter = "all";
 
 async function loadJSON(path){
   try{ const r = await fetch(path, {cache:"no-store"}); if(!r.ok) return null; return await r.json(); }
   catch(e){ return null; }
-}
-function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
-
-function renderGallery(){
-  const grid = document.getElementById("gallery-grid");
-  const items = GALLERY.filter(p => activeFilter==="all" || p.category===activeFilter);
-  grid.innerHTML = items.map(p =>
-    '<figure><img src="'+esc(p.image)+'" alt="'+esc(p.caption||"BallooonVan work")+'" loading="lazy"><figcaption>'+esc(p.caption||"")+'</figcaption></figure>'
-  ).join("") || '<p class="note">Photos coming soon.</p>';
-}
-document.querySelectorAll(".filter-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active"); activeFilter = btn.dataset.filter; renderGallery();
-  });
-});
-
-function selectedServices(){
-  return Array.from(document.querySelectorAll('input[name="service"]:checked')).map(i => i.value);
 }
 function updateEstimate(){
   const el = document.getElementById("estimate");
@@ -476,9 +420,6 @@ async function loadInstagram(){
     document.querySelectorAll("[data-phone-sms]").forEach(a => { a.href = "sms:+1" + digits; });
     document.querySelectorAll("[data-email]").forEach(a => { a.href = "mailto:" + SETTINGS.email; a.textContent = SETTINGS.email; });
   }
-  const g = await loadJSON("/content/gallery.json");
-  if(g && Array.isArray(g.photos) && g.photos.length) GALLERY = g.photos;
-  renderGallery();
   loadInstagram();
   updateEstimate();
 })();
