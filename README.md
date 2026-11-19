@@ -6,15 +6,20 @@ Pages, content editable by Karida via Sveltia CMS, code editable by Muse via Git
 
 ## What's in here
 
-- `index.html` — the whole public site (single page: services, gallery,
-  pricing, booking form, contact). Content loads from `content/*.json` with
-  built-in fallbacks, so the page works even if a JSON file is missing.
-- `assets/gallery/` — gallery photos (compressed, max 1200px). Rule from the
-  owner: generally **no children's faces in public designs** — only use photos
-  without identifiable children's faces, unless the owner confirms otherwise
-  for that specific photo (see the 2026-11-18 exception in Content rules).
+- `index.html` — the whole public site (single page: services, showcase,
+  Instagram carousel, pricing, booking form, contact). Content loads from
+  `content/*.json` with built-in fallbacks, so the page works even if a JSON
+  file is missing.
+- `assets/gallery/` — photos (compressed, max 1200px). Photos showing
+  children's faces are fine when the owner asked the child (or parent) and
+  got consent before taking the photo (policy changed 2026-11-19, see
+  Content rules). If anyone later asks for a photo to be removed, take it
+  down.
 - `content/settings.json` — phone, email, prices, service area (editable in CMS).
-- `content/gallery.json` — gallery photos, captions, categories (editable in CMS).
+- `content/gallery.json` — gallery photos, captions, categories (editable in
+  CMS, but the Gallery section was removed 2026-11-19 — this file is dormant
+  and not displayed; the Instagram carousel in `content/instagram.json` is
+  the only photo display).
 - `admin/` — Sveltia CMS admin page + config (`/admin` on the live site).
 
 ## How Karida edits the site (no code)
@@ -86,9 +91,10 @@ the mailto form as fallback until Tally is verified live.
   price is UNCONFIRMED — the site says "Book both together!" with no invented
   total. Update if the owner confirms a combo rate.
 - Service area: Metro Vancouver & beyond — other places welcome.
-- No children's faces in photos or designs, except `facepaint-collage.jpg`
-  (2026-11-18: owner confirmed publishing it as-is, with children's faces and
-  its BALLOOON STUDIO watermark, after being reminded of this rule and the
-  BallooonVan brand decision). Check with the owner before adding any other
-  photo showing children's faces.
+- Children's faces ARE allowed in photos (policy changed 2026-11-19): the
+  owner asks each child (or parent) and gets consent before taking the photo.
+  If a parent or child later asks for a photo to be removed, take it down.
+  Two carousel photos (2026-10-19 princess collection, 2025-06-02 Alice party)
+  and the face-painting showcase collage still carry the old BALLOOON STUDIO
+  watermark — published as-is, same as the 2026-11-18 collage exception.
 - Brand spelling: **Ballooonvan** (three o's) / BallooonVan.
